@@ -17,3 +17,6 @@ class ProductPage(BasePage):
         price_add = self.browser.find_element(*BasketPageLocators.BASKET_VALUE_ADD)
         assert price.text == price_add.text, "is not true value"
 
+
+
+

@@ -18,3 +18,8 @@ class BasketPageLocators():
                                      "p.price_color")
     BASKET_VALUE_ADD = (By.CSS_SELECTOR, "#messages > div.alert.alert-safe.alert-noicon.alert-info.fade.in > div > "
                                          "p:nth-child(1) > strong")
+    BASKET_FOR_MAIN_PAGE = (By.CSS_SELECTOR, "body > header > div.page_inner > div > "
+                                             "div.basket-mini.pull-right.hidden-xs > span > a")
+    BASKET_FOR_PRODUCT_PAGE = (By.CSS_SELECTOR, "#default > header > div.page_inner > div > "
+                                                "div.basket-mini.pull-right.hidden-xs > span > a")
+    BASKET_EMPTY = (By.CSS_SELECTOR, "#content_inner > p")
