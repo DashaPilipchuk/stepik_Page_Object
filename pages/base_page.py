@@ -1,6 +1,9 @@
 from selenium.common.exceptions import NoSuchElementException
 import math
 from selenium.common.exceptions import NoAlertPresentException
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class BasePage():
@@ -32,3 +35,14 @@ class BasePage():
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
+
+    def is_not_element_present(self, by, value, timeout=4):
+        try:
+            WebDriverWait(self.browser, timeout).until(EC.presence_of_element_located((by, value)))
+        except TimeoutException:
+            return True
+
+        return False
+
+    def should_be_basket_page(self, by, value):
+        self.browser.find_element(by, value).click()
